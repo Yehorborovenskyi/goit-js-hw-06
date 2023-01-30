@@ -12,10 +12,11 @@ function onFormSubmit(event) {
   };
   if (formElements.email.value === "") {
     alert("Введите email");
+    return;
   } else if (formElements.password.value === "") {
     alert("Введите password");
+    return;
   }
   event.currentTarget.reset();
-
   console.log(formData);
 }

@@ -14,12 +14,9 @@ const images = [
 ];
 
 const galleryEl = document.querySelector(".gallery");
-
-const elements = ({ url, alt }) => {
-  return `<img class = "item-image src ="${url}" alt ="${alt}" width = 200></img>`;
+const makeListGalleryMarkup = ({ url, alt }) => {
+  return `<li><img src="${url}" alt="${alt}" width = "320px"></li>`;
 };
 
-const makeImage = images.map(elements).join("");
-
-galleryEl.insertAdjacentHTML("afterbegin", makeImage);
-console.log(makeImage);
+const makeListGallerys = images.map(makeListGalleryMarkup).join("");
+galleryEl.insertAdjacentHTML("beforeend", makeListGallerys);
